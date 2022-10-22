@@ -57,7 +57,7 @@ def partA():
     speed = 8
     width = .55
     length = .75
-    radius = 2.225/2
+    radius = 2.5/2
     time = (pi*radius/speed)*1.1
 
     theta = speed * timestep / radius
@@ -71,7 +71,7 @@ def partA():
     right = (rminl * 10) + left
     v.step(left, right, time)
 
-    radius = 2.225
+    radius = 2.5
     time = (2*pi*radius/speed)*1.1
 
     theta = speed * timestep / radius
@@ -86,4 +86,26 @@ def partA():
     drawPath(v.position)
     print(v.commands)
 
+def partB():
+    velocity = 8
+    width = .55
+    length = .75
+    t = .1
+
+    v = Ackermann(width, length, t)
+
+    radius = 2.225 / 2
+    alpha = atan(length / radius)
+    v.step(alpha, velocity, 2*pi*radius/16)
+
+    radius = 2.225
+    alpha = atan(length / radius)
+    
+    v.step(alpha, velocity, 2*pi*radius/8)
+
+    drawPath(v.position)
+    print(v.commands)
+
+
 partA()
+partB()
