@@ -106,6 +106,42 @@ def partB():
     drawPath(v.position,timestep)
     print(v.commands)
 
+def partC():
+    # Constants / setup
+    velocity = 8
+    width = .55
+    length = .75
+    timestep = .1
+    circleRadius = 2.5
+    v = Ackermann(width, length, timestep)
+
+    # we start on edge of circle
+    v.x=circleRadius
+
+    # Full size circle all the way around
+    radius = circleRadius
+    alpha = atan(length / radius)
+    error=[]
+    cxl=[]
+    cyl=[]
+    for i in range(round(2*pi*radius/velocity/timestep)):
+        v.step(alpha, velocity, timestep)
+        cx=circleRadius*cos(i*(velocity/length*timestep*tan(alpha)))
+        cy=circleRadius*sin(i*(velocity/length*timestep*tan(alpha)))
+        cxl.append(cx)
+        cyl.append(cy)
+
+        diff=sqrt((v.x-cx)**2+(v.y-cy)**2)
+        error.append(diff)
+
+    # plot the error
+    plt.plot(cxl,cyl)
+    plt.plot([i[0] for i in v.position],[i[1] for i in v.position])
+    plt.show()
+    plt.plot(error)
+    plt.show()
+
 
 partA()
 partB()
+partC()
