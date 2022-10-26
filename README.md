@@ -20,3 +20,10 @@ Workspace volume is: $\pi \cdot 100^2 - \pi \cdot 20^2 = 30159.289 cm^2$
 ### Part C
 
     python3 midterm_problem2.py
+
+
+
+## Problem 6
+### Parts A and B and D
+
+    python3 midterm_problem6.py
