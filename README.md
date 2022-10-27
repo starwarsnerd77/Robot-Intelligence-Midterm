@@ -1,5 +1,9 @@
 # CS 5510 Midterm
 
+## Requirements
+gym==0.21.0
+pyglet
+
 ## Problem 1
 
     python3 midterm_problem1.py
@@ -21,6 +25,15 @@ Workspace volume is: $\pi \cdot 100^2 - \pi \cdot 20^2 = 30159.289 cm^2$
 
     python3 midterm_problem2.py
 
+## Problem 4
+### Part B
+
+    python3 midterm_problem4.py
+
+## Problem 5
+### Part C
+
+    python3 midterm_problem5.py
 
 
 ## Problem 6

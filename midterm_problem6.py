@@ -1,7 +1,5 @@
 from fer import Video
 from fer import FER
-import os
-import sys
 import pandas as pd
 import matplotlib.pyplot as plt
 import cv2
@@ -38,7 +36,7 @@ def partB():
     frame_height = int(vid.get(4))
     size = (frame_width, frame_height)
     
-    result = cv2.VideoWriter('my_video.mp4', 
+    result = cv2.VideoWriter('videos/my_video.mp4', 
                          cv2.VideoWriter_fourcc(*'MJPG'),
                          10, size)
   
@@ -64,9 +62,10 @@ def partB():
     partA("videos/my_video.mp4")
 
 def main():
-    location_videofile = "videos/Video_One.mp4"
-    # location_videofile = "videos/Video_Two.mp4"
-    partA(location_videofile)
+    partA("videos/Video_One.mp4")
+    displayPlot()
+
+    partA("videos/Video_Two.mp4")
     displayPlot()
 
     partB()
