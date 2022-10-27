@@ -106,12 +106,11 @@ def partB():
     drawPath(v.position,timestep)
     print(v.commands)
 
-def partC():
+def errorGraph(timestep,theta_factor,velocity_factor):
     # Constants / setup
     velocity = 8
     width = .55
     length = .75
-    timestep = .1
     circleRadius = 2.5
     v = Ackermann(width, length, timestep)
 
@@ -126,8 +125,8 @@ def partC():
     cyl=[]
     for i in range(round(2*pi*radius/velocity/timestep)):
         v.step(alpha, velocity, timestep)
-        cx=circleRadius*cos(i*(velocity/length*timestep*tan(alpha)))
-        cy=circleRadius*sin(i*(velocity/length*timestep*tan(alpha)))
+        cx=circleRadius*cos(theta_factor*i*(velocity_factor*velocity/length*timestep*tan(alpha)))
+        cy=circleRadius*sin(theta_factor*i*(velocity_factor*velocity/length*timestep*tan(alpha)))
         cxl.append(cx)
         cyl.append(cy)
 
@@ -135,13 +134,24 @@ def partC():
         error.append(diff)
 
     # plot the error
-    plt.plot(cxl,cyl)
-    plt.plot([i[0] for i in v.position],[i[1] for i in v.position])
+    #plt.plot(cxl,cyl)
+    #plt.plot([i[0] for i in v.position],[i[1] for i in v.position])
+    #plt.show()
+    plt.plot([i*timestep for i in range(len(v.position))],error)
+    plt.xlabel("Time")
+    plt.ylabel("Error")
     plt.show()
-    plt.plot(error)
-    plt.show()
+def partC():
+    errorGraph(1,1,1)
+    errorGraph(.1,1,1)
+    errorGraph(.01,1,1)
+def partD():
+    errorGraph(1,1-.08,1-.04)
+    errorGraph(.1,1-.08,1-.04)
+    errorGraph(.01,1-.08,1-.04)
 
 
 partA()
 partB()
 partC()
+partD()
