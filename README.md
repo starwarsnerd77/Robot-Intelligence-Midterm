@@ -13,6 +13,8 @@ pyglet
 ### Part A
 Workspace volume is: $\pi \cdot 100^2 - \pi \cdot 20^2 = 30159.289 cm^2$
 
+Picture in `images/problem 2.png`
+
 ### Part B
 | Link | $a_i$ | $d_i$ | $\alpha_i$ | $\theta_i$ |
 | :--: | :---: | :---: | :--------: | :--------: |
@@ -24,6 +26,9 @@ Workspace volume is: $\pi \cdot 100^2 - \pi \cdot 20^2 = 30159.289 cm^2$
 ### Part C
 
     python3 midterm_problem2.py
+
+## Problem 3
+    python3 midterm_problem3.py
 
 ## Problem 4
 ### Part B
