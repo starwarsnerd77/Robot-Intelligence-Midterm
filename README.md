@@ -31,9 +31,17 @@ Picture in `images/problem 2.png`
     python3 midterm_problem3.py
 
 ## Problem 4
+### Part A
+The equations track acceleration.
+For theta acceleration we take gravity and multiply by the span of x of the pole. This is added to the y span of the pole times related forces and masses. The formula is quite convoluted. Basically the closer to horizontal the greater the acceleration. The greater the applied force the greater the acceleration.
+For X acceleration it is simple force over mass unless the pole itself has mass. When the pole has mass the formula becomes complicated.
 ### Part B
 
     python3 midterm_problem4.py
+### Part C
+8.285 degrees. Found with:
+
+    python3 4c.py
 
 ## Problem 5
 ### Part A
@@ -41,6 +49,7 @@ Merits
 1. using reinforcement learning is sometimes simpler than alernatives
 2. using reinforcement learning can adapt given more data
 3. Accidents that result from your code can be blamed on the data shifting liability.
+
 Demerits
 1. RL is a black box.
 2. It is computationally expensive to train a model
