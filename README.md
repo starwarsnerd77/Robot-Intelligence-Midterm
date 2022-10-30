@@ -36,17 +36,38 @@ Picture in `images/problem 2.png`
     python3 midterm_problem4.py
 
 ## Problem 5
+### Part A
+Merits
+1. using reinforcement learning is sometimes simpler than alernatives
+2. using reinforcement learning can adapt given more data
+3. Accidents that result from your code can be blamed on the data shifting liability.
+Demerits
+1. RL is a black box.
+2. It is computationally expensive to train a model
+3. RL can't beat an optimal controls algorithm for a particular task
+### Part B
+
+    images/5B.png
+
+Reinforcement learning doesn't need to know the environment while controls does.
+
 ### Part C
 
     python3 midterm_problem5.py
-
+### Part D
+UNFINISHED
 
 ## Problem 6
 ### Parts A and B and D
 
     python3 midterm_problem6.py
+### Part C
+Logical applications for this tool are counting people in a line to predict wait times. For the emotion part it could detect dangerous situations before they happen. Ethically we can all agree that less chaotic crowds and predictable wait times in lines are good things. This technology is only better at reading your face then socially inadept people. There is only ethical concerns when the technology makes decisions on inaccurate or biased predictions.
 
-
+## Problem 7
+UNFINISHED
+## Problem 8
+UNFINISHED
 
 ## Problem 9 Ethics of Robotics - Open Ended Questions
 1. Many people (particularly those in the robotics industry) believe that
