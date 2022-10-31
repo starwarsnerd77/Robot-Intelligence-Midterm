@@ -74,9 +74,15 @@ UNFINISHED
 Logical applications for this tool are counting people in a line to predict wait times. For the emotion part it could detect dangerous situations before they happen. Ethically we can all agree that less chaotic crowds and predictable wait times in lines are good things. This technology is only better at reading your face then socially inadept people. There is only ethical concerns when the technology makes decisions on inaccurate or biased predictions.
 
 ## Problem 7
+### Part A
 The graph is found in `problem7table.txt`. The lowest cost was found by those planners where it was guaranteed, A-Star, Dijkstra, and breadth first search. Breadth first search makes it because our edges are not weighted. Breadth first search was the fastest to find a solution. The custom AStar solution uses inefficient data structures, therefore it was ran on a smaller version of the maze to finish running in time. After comparing the solutions I definitely think I can make a faster solution than all of the ones so far. The custom AStar uses bad data structures, this can be fixed with a custom heap. All the algorithms are in python, therefore 50x slower than a real language, writing in c++ would fix that. For a robot in a complex environment none of these are suitable. At least not by themselves. I would use one of these when finding a path, probably A-Star as it supports weighted edges and is faster than dihkstra and still finds the best solution. After finding a path the next problem is that for a robot in a complex environment things are changing and path adjustments are needed. A suitable algorithm to update the path is necessary.
 
     python3 midterm_problem7.py
+
+### Part B
+The trajectory graph is in `problem7BGraph.png`. The Hybrid has smoother steering and looks like something a robot could do. The Hybrid A* when adding points to the frontier only chooses points within the turning radius. In addition the heuristic is modified to want to point the correct direction. Compared to simple grid A* which can move in any of 8 directions. This means that from the kinematic constraints on Hybrid A* it creates more realistic paths.
+
+    python3 midterm_problem7B.py
 
 ## Problem 8
 UNFINISHED
