@@ -90,7 +90,7 @@ The pytorch classifier is under `performing_detection/pytorch/performing_detecti
 ### Part B
 Using `midterm_problem8.py` we ran YOLO on the 10 images the results are in `problem8classifiedYOLO`. Using pytorch to classify takes about 3 times as long as YOLO on my computer. Besides those two image classification algorithms others are different in other ways. Either not drawing a bounding box at all or classifying each pixel.
 ### Part C
-Using `Teachable Machine` we created a classifier via transfer learning for classifying 'keys' and 'mechanical pencils'. This is hosted at https://timothystander.com/transfer_learning
+Using `Teachable Machine` we created a classifier via transfer learning for classifying 'keys' and 'pencils'. This is hosted at https://timothystander.com/transfer_learning. The code is in `transfer_learning`.
 
 ## Problem 9 Ethics of Robotics - Open Ended Questions
 1. Many people (particularly those in the robotics industry) believe that
