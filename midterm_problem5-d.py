@@ -243,3 +243,8 @@ class HalfCheetahEnv(MujocoEnv, utils.EzPickle):
                 getattr(self.viewer.cam, key)[:] = value
             else:
                 setattr(self.viewer.cam, key, value)
+
+c=HalfCheetahEnv()
+for i in range(100):
+    o=c.step([1,0,0,0,0,0])
+    print(o)

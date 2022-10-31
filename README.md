@@ -64,7 +64,10 @@ Reinforcement learning doesn't need to know the environment while controls does.
 
     python3 midterm_problem5.py
 ### Part D
-UNFINISHED
+Even after getting the vm up and running the code still wouldn't run. After that we tried installing things locally. We finally got it to run but didn't have time to attach it to a neural network.
+
+    python3 midterm_problem5-d.py
+
 
 ## Problem 6
 ### Parts A and B and D
@@ -91,7 +94,8 @@ The pytorch classifier is under `performing_detection/pytorch/performing_detecti
 Using `midterm_problem8.py` we ran YOLO on the 10 images the results are in `problem8classifiedYOLO`. Using pytorch to classify takes about 3 times as long as YOLO on my computer. Besides those two image classification algorithms others are different in other ways. Either not drawing a bounding box at all or classifying each pixel.
 ### Part C
 Using `Teachable Machine` we created a classifier via transfer learning for classifying 'keys' and 'pencils'. This is hosted at https://timothystander.com/transfer_learning. The code is in `transfer_learning`.
-
+### Part D
+Detectron requires linux on a computer with a NVIDIA GPU. It also requires Python2 (which is outdated). This is listed on the install page. My computer can't run it as I am on windows. I infer that Mask R-CNN, the one that starts with bounding boxes and then creates masks, to be slow but generate good predictions. I infer faster R-CNN to be faster because it doesn't generate masks. RetinaNet should be faster yet as it only has one-stage, though I expect it to be less accurate. The other two follow the two stage pattern of finding areas and then classifying which is more accurate and slower.
 ## Problem 9 Ethics of Robotics - Open Ended Questions
 1. Many people (particularly those in the robotics industry) believe that
 robotics is purely within the purview of technical development and should not have
