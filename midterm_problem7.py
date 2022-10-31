@@ -79,9 +79,13 @@ def astar(maze, start, end):
         for child in children:
 
             # Child is on the closed list
+            flag=False
             for closed_child in closed_list:
                 if child == closed_child:
-                    continue
+                    flag=True
+                    break
+            if flag:
+                continue
 
             # Create the f, g, and h values
             child.g = current_node.g + 1
@@ -89,32 +93,18 @@ def astar(maze, start, end):
             child.f = child.g + child.h
 
             # Child is already in the open list
+            flag=False
             for open_node in open_list:
                 if child == open_node and child.g > open_node.g:
-                    continue
+                    flag=True
+                    break
+            if flag:
+                continue
 
             # Add the child to the open list
             open_list.append(child)
 
 
-def test():
-
-    maze = [[0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
-
-    start = (0, 0)
-    end = (7, 6)
-
-    path = astar(maze, start, end)
-    print(path)
 ox=[]
 oy=[]
 ox, oy = [], []
@@ -136,8 +126,23 @@ for i in range(-10, 40):
 for i in range(0, 40):
     ox.append(40.0)
     oy.append(60.0 - i)
+
+maze = [[0 for j in range(8)] for i in range(8)]
+for i in range(0,len(ox)):
+    maze[int(oy[i]+10)//10][int(ox[i]+10)//10]=1
+#print("\n".join([" ".join([str(i) for i in j]) for j in maze]))
+start = (1, 1)
+end = (6, 6)
 import time
 out=[]
+t1=time.time()
+for i in range(10):
+    steps = astar(maze, start, end)
+t2=time.time()
+out.append(("Custom AStar",len(steps)*10,(t2-t1)/10))
+
+
+
 from AStar.a_star import AStarPlanner
 import AStar.a_star as k
 k.show_animation=False
@@ -176,7 +181,6 @@ for i in range(10):
     breadth_first_search=BreadthFirstSearchPlanner(ox,oy,1,1)
     steps=breadth_first_search.planning(10,10,50,50)
 t2=time.time()
-print(steps)
 out.append(("BreadthFirstSearch",len(steps[0]),(t2-t1)/10))
 
 from RRTStar.rrt_star import RRTStar
@@ -196,5 +200,5 @@ for i in range(1):
     for step in range(1,len(steps)):
         length+=sqrt((steps[step-1][0]-steps[step][0])**2+(steps[step-1][1]-steps[step][1])**2)
 t2=time.time()
-out.append(("RRTStar",length/10,(t2-t1)/10))
+out.append(("RRTStar",length,(t2-t1)))
 print("\n".join([" ".join([str(j) for j in i]) for i in out]))
