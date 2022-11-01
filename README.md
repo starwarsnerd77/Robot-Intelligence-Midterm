@@ -1,9 +1,5 @@
 # CS 5510 Midterm
 
-## Requirements
-gym==0.21.0
-pyglet
-
 ## Problem 1
 
     python3 midterm_problem1.py
